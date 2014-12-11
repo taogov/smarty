@@ -42,12 +42,18 @@ class SmartyEngine implements Engines\EngineInterface
         $cache_lifetime = $this->config[$configKey . 'cache_lifetime'];
         $debugging = $this->config[$configKey . 'debugging'];
 
+        $left_delimiter = $this->config[$configKey . 'left_delimiter'];
+        $right_delimiter = $this->config[$configKey . 'right_delimiter'];
+
         $template_path = $this->config[$configKey . 'template_path'];
         $compile_path = $this->config[$configKey . 'compile_path'];
         $cache_path = $this->config[$configKey . 'cache_path'];
 
         // Get the plugins path from the configuration
         $plugins_paths = $this->config[$configKey . 'plugins_paths'];
+
+        // 取得config path为了fis map.json
+        $configs_paths = $this->config[$configKey . 'configs_paths'];
 
         // Create smarty object.
         $smarty = new \Smarty();
@@ -64,10 +70,18 @@ class SmartyEngine implements Engines\EngineInterface
             $smarty->addPluginsDir($path);
         }
 
+        foreach ($configs_paths as $path){
+            $smarty->addConfigDir($path);
+        }
+
+
         $smarty->debugging = $debugging;
         $smarty->caching = $caching;
         $smarty->cache_lifetime = $cache_lifetime;
         $smarty->compile_check = true;
+
+        $smarty->left_delimiter = $left_delimiter;
+        $smarty->right_delimiter = $right_delimiter;
 
         // $smarty->escape_html = true;
         $smarty->error_reporting = E_ALL & ~ E_NOTICE;
