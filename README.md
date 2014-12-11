@@ -3,6 +3,8 @@ Smarty
 
 This package lets you run Smarty3 on Laravel4 elegantly.
 
+改造配置项，让其支持fis的smarty插件的配置
+
 ## Installation
 
 ```
