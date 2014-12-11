@@ -1,4 +1,5 @@
-<?php namespace Latrell\Smarty;
+<?php
+namespace Xbird\Smarty;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -18,7 +19,7 @@ class SmartyServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('latrell/smarty');
+		$this->package('x-bird/smarty');
 	}
 
 	/**

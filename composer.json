@@ -5,8 +5,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Latrell Chan",
-            "email": "i@latrell.me"
+            "name": "X-Bird",
+            "email": "x-bird@qiubs.com"
         }
     ],
     "require": {
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Latrell\\Smarty\\": "src/"
+            "Xbird\\Smarty\\": "src/"
         }
     }
 }

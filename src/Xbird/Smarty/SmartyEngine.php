@@ -1,5 +1,5 @@
 <?php
-namespace Latrell\Smarty;
+namespace Xbird\Smarty;
 
 use Illuminate\View;
 use Illuminate\View\Engines;
