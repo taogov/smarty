@@ -1,7 +1,7 @@
 {
     "name": "x-bird/smarty",
     "description": "改自latrell/smarty，增加配置项，让其支持fis smarty插件的配置项.",
-    "keywords": ["L4", "Laravel 4", "Laravel", "Smarty", "Smarty 3", "View", "Templating"],
+    "keywords": ["Laravel", "Smarty", "View", "Templating", "fis", "fis smarty"],
     "license": "MIT",
     "authors": [
         {
