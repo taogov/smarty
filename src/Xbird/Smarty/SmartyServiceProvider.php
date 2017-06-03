@@ -10,7 +10,7 @@ class SmartyServiceProvider extends ServiceProvider {
 	 *
 	 * @var bool
 	 */
-	protected $defer = false;
+	// protected $defer = false;
 
 	/**
 	 * Bootstrap the application events.
@@ -19,7 +19,7 @@ class SmartyServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('x-bird/smarty');
+		// $this->package('x-bird/smarty');
 	}
 
 	/**
@@ -31,19 +31,25 @@ class SmartyServiceProvider extends ServiceProvider {
 	{
 		$app = $this->app;
 
+		$configPath = __DIR__ . '/../../config/laravel5-fis3-smarty.php';
+        $this->mergeConfigFrom($configPath, 'laravel5-fis3-smarty');
+        $this->publishes([
+            $configPath => $this->resolveConfigurePath() . DIRECTORY_SEPARATOR . 'laravel5-fis3-smarty.php',
+        ]);
+
+
 		$this->app['view']->addExtension('tpl', 'smarty', function() use ($app){
-			return new SmartyEngine($app['config']);
+			return new SmartyEngine($app['config']['laravel5-fis3-smarty']);
 		});
 	}
 
 	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return array();
-	}
+     * @return string
+     */
+    protected function resolveConfigurePath()
+    {
+        return (isset($this->app['path.config']))
+            ? $this->app['path.config'] : $this->app->basePath() . DIRECTORY_SEPARATOR . 'config';
+    }
 
 }

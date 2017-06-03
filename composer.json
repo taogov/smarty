@@ -3,16 +3,14 @@
     "description": "改自latrell/smarty，增加配置项，让其支持fis smarty插件的配置项.",
     "keywords": ["Laravel", "Smarty", "View", "Templating", "fis", "fis smarty"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "X-Bird",
-            "email": "x-bird@qiubs.com"
-        }
-    ],
+    "authors": [{
+        "name": "X-Bird",
+        "email": "x-bird@qiubs.com"
+    }],
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "5.4.*",
-        "smarty/smarty": "~3.1"
+        "smarty/smarty": "3.1.27"
     },
     "autoload": {
         "psr-0": {
