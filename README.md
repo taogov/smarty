@@ -1,37 +1,32 @@
-Smarty
+Laravel 5.4 + Fis3 静态资源管理系统
 ======
 
-This package lets you run Smarty3 on Laravel4 elegantly.
 
-改造配置项，让其支持fis的smarty插件的配置
-
-## Installation
+## 安装
 
 ```
-composer require latrell/smarty dev-master
+composer require x-bird/smarty
 ```
 
-Update your packages with ```composer update``` or install with ```composer install```.
-
-
-## Usage
-
-To use the Smarty Service Provider, you must register the provider when bootstrapping your Laravel application. There are
-essentially two ways to do this.
-
-Find the `providers` key in `app/config/app.php` and register the Smarty Service Provider.
-
+## 配置
+* 在 `config/app.php` 文件中配置：
 ```php
     'providers' => array(
         // ...
-        'Latrell\Smarty\SmartyServiceProvider',
+        Xbird\Smarty\SmartyServiceProvider::class,
     )
 ```
+* 执行发布配置文件：`php artisan vendor:publish --provider="Xbird\Smarty\SmartyServiceProvider" --tag=config --tag=plugins`
 
-Then publish the config file with `php artisan config:publish latrell/smarty`. This will add the file `app/config/packages/latrell/smarty/config.php`. This config file is the primary way you interact with Smarty.
 
-Then simply reference templates using the normal dot syntax of Laravel. 
+## 使用
+* 加入providers：
+* 假设有模板文件`views/blog/post.tpl`，那controller中是这样渲染的，`View::make('blog.post')`
+* 关于 `{include}` 或 `{extends}` 标签的参数传递, 需要使用全路径的写法, 例如： `{extends file="blog/post.tpl"}`
 
-For example to load smarty template `views/blog/post.tpl`, you would use `View::make('blog.post')`.
 
-In Smarty `{include}` or `{extends}` tags, you should continue to use the full directory syntax, e.g. `{extends file="blog/post.tpl"}`.
+## 配置项解释
+* 模板放置路径：`template_path`
+* 模板缓存路径：`cache_path`
+* 模板编译路径：`compile_path`
+* fis3 产出的namespace-map.json 放置路径：`configs_paths`
