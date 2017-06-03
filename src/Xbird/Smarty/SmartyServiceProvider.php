@@ -19,7 +19,13 @@ class SmartyServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		// $this->package('x-bird/smarty');
+        $configPath = __DIR__ . '/../../config/laravel5-fis3-smarty.php';
+        if (function_exists('config_path')) {
+            $publishPath = config_path('laravel5-fis3-smarty.php');
+        } else {
+            $publishPath = base_path('config/laravel5-fis3-smarty.php');
+        }
+        $this->publishes([$configPath => $publishPath], 'config');
 	}
 
 	/**
@@ -33,23 +39,9 @@ class SmartyServiceProvider extends ServiceProvider {
 
 		$configPath = __DIR__ . '/../../config/laravel5-fis3-smarty.php';
         $this->mergeConfigFrom($configPath, 'laravel5-fis3-smarty');
-        $this->publishes([
-            $configPath => $this->resolveConfigurePath() . DIRECTORY_SEPARATOR . 'laravel5-fis3-smarty.php',
-        ]);
-
 
 		$this->app['view']->addExtension('tpl', 'smarty', function() use ($app){
 			return new SmartyEngine($app['config']['laravel5-fis3-smarty']);
 		});
 	}
-
-	/**
-     * @return string
-     */
-    protected function resolveConfigurePath()
-    {
-        return (isset($this->app['path.config']))
-            ? $this->app['path.config'] : $this->app->basePath() . DIRECTORY_SEPARATOR . 'config';
-    }
-
 }
