@@ -36,28 +36,25 @@ class SmartyEngine implements Engines\EngineInterface
      */
     protected function evaluatePath($__path, $__data)
     {
-        $configKey = 'smarty::';
+        $caching = $this->config['caching'];
+        $cache_lifetime = $this->config['cache_lifetime'];
+        $debugging = $this->config['debugging'];
 
-        $caching = $this->config[$configKey . 'caching'];
-        $cache_lifetime = $this->config[$configKey . 'cache_lifetime'];
-        $debugging = $this->config[$configKey . 'debugging'];
+        $left_delimiter = $this->config['left_delimiter'];
+        $right_delimiter = $this->config['right_delimiter'];
 
-        $left_delimiter = $this->config[$configKey . 'left_delimiter'];
-        $right_delimiter = $this->config[$configKey . 'right_delimiter'];
-
-        $template_path = $this->config[$configKey . 'template_path'];
-        $compile_path = $this->config[$configKey . 'compile_path'];
-        $cache_path = $this->config[$configKey . 'cache_path'];
+        $template_path = $this->config['template_path'];
+        $compile_path = $this->config['compile_path'];
+        $cache_path = $this->config['cache_path'];
 
         // Get the plugins path from the configuration
-        $plugins_paths = $this->config[$configKey . 'plugins_paths'];
+        $plugins_paths = $this->config['plugins_paths'];
 
         // 取得config path为了fis map.json
-        $configs_paths = $this->config[$configKey . 'configs_paths'];
+        $configs_paths = $this->config['configs_paths'];
 
         // Create smarty object.
         $smarty = new \Smarty();
-
         $smarty->setTemplateDir($template_path);
         $smarty->setCompileDir($compile_path);
         $smarty->setCacheDir($cache_path);
