@@ -26,6 +26,12 @@ class SmartyServiceProvider extends ServiceProvider {
             $publishPath = base_path('config/laravel5-fis3-smarty.php');
         }
         $this->publishes([$configPath => $publishPath], 'config');
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../../libraries' => base_path('libraries'),
+            ], 'plugins');
+        }
 	}
 
 	/**
