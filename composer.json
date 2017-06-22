@@ -6,6 +6,9 @@
     "authors": [{
         "name": "X-Bird",
         "email": "x-bird@qiubs.com"
+    }, {
+        "name": "marlon",
+        "email": "marlon@tfan.net"
     }],
     "require": {
         "php": ">=5.3.0",
