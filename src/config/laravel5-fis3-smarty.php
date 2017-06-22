@@ -16,7 +16,7 @@ return array(
 
     // The path to additional Smarty plugins
     'plugins_paths'   => array(
-        base_path() . 'libraries/smarty/plugins'
+        base_path() . '/libraries/smarty/plugins'
     ),
 
    'configs_paths'    => array(
