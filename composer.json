@@ -1,5 +1,5 @@
 {
-  "name": "wentao/smarty",
+  "name": "taogov/smarty",
   "description": "改自latrell/smarty，增加配置项，让其支持fis smarty插件的配置项.",
   "keywords": [
     "Laravel",
