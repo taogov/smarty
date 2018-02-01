@@ -1,23 +1,33 @@
 {
-    "name": "x-bird/smarty",
-    "description": "改自latrell/smarty，增加配置项，让其支持fis smarty插件的配置项.",
-    "keywords": ["Laravel", "Smarty", "View", "Templating", "fis", "fis smarty"],
-    "license": "MIT",
-    "authors": [{
-        "name": "X-Bird",
-        "email": "x-bird@qiubs.com"
-    }, {
-        "name": "marlon",
-        "email": "marlon@tfan.net"
-    }],
-    "require": {
-        "php": ">=5.3.0",
-        "illuminate/support": "5.4.*",
-        "smarty/smarty": "3.1.27"
+  "name": "taogov/smarty",
+  "description": "改自latrell/smarty，增加配置项，让其支持fis smarty插件的配置项.",
+  "keywords": [
+    "Laravel",
+    "Smarty",
+    "View",
+    "Templating",
+    "fis",
+    "fis smarty"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "taogov",
+      "email": "taogov@gmail.com"
     },
-    "autoload": {
-        "psr-0": {
-            "Xbird\\Smarty\\": "src/"
-        }
+    {
+      "name": "taogov",
+      "email": "taogov@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "illuminate/support": "5.5.*",
+    "smarty/smarty": "3.1.27"
+  },
+  "autoload": {
+    "psr-0": {
+      "taogov\\Smarty\\": "src/"
+    }
+  }
 }

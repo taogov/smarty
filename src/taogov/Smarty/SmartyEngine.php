@@ -1,11 +1,10 @@
 <?php
-namespace Xbird\Smarty;
+namespace taogov\Smarty;
 
-use Illuminate\View;
-use Illuminate\View\Engines;
+use Illuminate\Contracts\View\Engine;
 use Illuminate\View\Compilers\CompilerInterface;
 
-class SmartyEngine implements Engines\EngineInterface
+class SmartyEngine implements Engine
 {
 
     protected $config;

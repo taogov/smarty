@@ -1,5 +1,5 @@
 <?php
-namespace Xbird\Smarty;
+namespace taogov\Smarty;
 
 use Illuminate\Support\ServiceProvider;
 
